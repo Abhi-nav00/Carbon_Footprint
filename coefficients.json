@@ -1,0 +1,104 @@
+{
+  "electricity": {
+    "value": 0.233,
+    "units": "kgCO2e/kWh",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "natural_gas": {
+    "value": 5.3,
+    "units": "kgCO2e/therm",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "natural_gas_m3": {
+    "value": 2.21,
+    "units": "kgCO2e/m3",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "heating_oil": {
+    "value": 2.68,
+    "units": "kgCO2e/litre",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "lpg": {
+    "value": 1.55,
+    "units": "kgCO2e/litre",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "car_petrol": {
+    "value": 2.31,
+    "units": "kgCO2e/litre",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "car_diesel": {
+    "value": 2.68,
+    "units": "kgCO2e/litre",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "bus": {
+    "value": 0.089,
+    "units": "kgCO2e/km",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "train": {
+    "value": 0.041,
+    "units": "kgCO2e/km",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "short_flight": {
+    "value": 0.18,
+    "units": "kgCO2e/km",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "long_flight": {
+    "value": 0.11,
+    "units": "kgCO2e/km",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "diet_omnivore": {
+    "value": 2.5,
+    "units": "kgCO2e/day",
+    "source": "https://ourworldindata.org/food-choice-vs-eating-local",
+    "last_updated": "2023-01-01"
+  },
+  "diet_vegetarian": {
+    "value": 1.7,
+    "units": "kgCO2e/day",
+    "source": "https://ourworldindata.org/food-choice-vs-eating-local",
+    "last_updated": "2023-01-01"
+  },
+  "diet_vegan": {
+    "value": 1.5,
+    "units": "kgCO2e/day",
+    "source": "https://ourworldindata.org/food-choice-vs-eating-local",
+    "last_updated": "2023-01-01"
+  },
+  "diet_pescatarian": {
+    "value": 1.9,
+    "units": "kgCO2e/day",
+    "source": "https://ourworldindata.org/food-choice-vs-eating-local",
+    "last_updated": "2023-01-01"
+  },
+  "waste_landfill": {
+    "value": 0.5,
+    "units": "kgCO2e/kg",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  },
+  "waste_recycled": {
+    "value": -0.5,
+    "units": "kgCO2e/kg",
+    "source": "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references",
+    "last_updated": "2023-01-01"
+  }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Carbon Footprint Calculator</h1>
+                <p>Calculate your annual carbon footprint and discover ways to reduce it</p>
+            </div>
+            <img src="{{ url_for('static', filename='images/greenery.png') }}" alt="Greenery" class="greenery-img">
+        </header>
+
+        <form id="carbon-form" class="carbon-form">
+            <div class="form-grid">
+                <!-- Household Section -->
+                <div class="form-section">
+                    <h2 class="section-title">Household</h2>
+                    <div class="input-group">
+                        <label for="household_size">Household size (people)</label>
+                        <input type="number" id="household_size" name="household_size" min="1" max="20" value="1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="country">Country/Region</label>
+                        <select id="country" name="country" required>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="India">India</option>
+                            <option value="Germany">Germany</option>
+                            <option value="China">China</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Energy Section -->
+                <div class="form-section">
+                    <h2 class="section-title">Energy</h2>
+                    <div class="input-group">
+                        <label for="electricity_kwh">Electricity consumption (kWh/year)</label>
+                        <input type="number" id="electricity_kwh" name="electricity_kwh" min="0" placeholder="e.g., 3600">
+                    </div>
+                    <div class="input-group">
+                        <label for="natural_gas_volume">Natural gas consumption</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="natural_gas_volume" name="natural_gas_volume" min="0" placeholder="e.g., 2000">
+                            <select id="natural_gas_unit" name="natural_gas_unit">
+                                <option value="m3">m³/year</option>
+                                <option value="therms">therms/year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="heating_oil_l">Heating oil (litres/year)</label>
+                        <input type="number" id="heating_oil_l" name="heating_oil_l" min="0" placeholder="e.g., 0">
+                    </div>
+                    <div class="input-group">
+                        <label for="lpg_l">LPG (litres/year)</label>
+                        <input type="number" id="lpg_l" name="lpg_l" min="0" placeholder="e.g., 0">
+                    </div>
+                    <div class="input-group">
+                        <label for="renewable_pct">Renewable electricity (%)</label>
+                        <input type="number" id="renewable_pct" name="renewable_pct" min="0" max="100" value="0">
+                    </div>
+                </div>
+
+                <!-- Transport Section -->
+                <div class="form-section">
+                    <h2 class="section-title">Transport</h2>
+                    <div class="input-group">
+                        <label for="car_km">Car distance (km/year)</label>
+                        <input type="number" id="car_km" name="car_km" min="0" placeholder="e.g., 12000">
+                    </div>
+                    <div class="input-group">
+                        <label for="car_fuel_efficiency">Fuel efficiency</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="car_fuel_efficiency" name="car_fuel_efficiency" min="0" step="0.1" placeholder="e.g., 6.5">
+                            <select id="car_fuel_unit" name="car_fuel_unit">
+                                <option value="l_per_100km">L/100km</option>
+                                <option value="mpg">mpg</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="car_fuel_type">Fuel type</label>
+                        <select id="car_fuel_type" name="car_fuel_type">
+                            <option value="petrol">Petrol/Gasoline</option>
+                            <option value="diesel">Diesel</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="bus_km">Bus distance (km/year)</label>
+                        <input type="number" id="bus_km" name="bus_km" min="0" placeholder="e.g., 800">
+                    </div>
+                    <div class="input-group">
+                        <label for="train_km">Train distance (km/year)</label>
+                        <input type="number" id="train_km" name="train_km" min="0" placeholder="e.g., 400">
+                    </div>
+                    <div class="input-group">
+                        <label for="short_flights">Short-haul flights (per year)</label>
+                        <input type="number" id="short_flights" name="short_flights" min="0" placeholder="e.g., 1">
+                        <small class="help-text">&lt; 3 hours</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="long_flights">Long-haul flights (per year)</label>
+                        <input type="number" id="long_flights" name="long_flights" min="0" placeholder="e.g., 0">
+                        <small class="help-text">&gt; 3 hours</small>
+                    </div>
+                </div>
+
+                <!-- Diet Section -->
+                <div class="form-section">
+                    <h2 class="section-title">Diet & Food</h2>
+                    <div class="input-group">
+                        <label for="diet">Diet type</label>
+                        <select id="diet" name="diet">
+                            <option value="omnivore">Omnivore</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="pescatarian">Pescatarian</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Waste Section -->
+                <div class="form-section">
+                    <h2 class="section-title">Waste & Recycling</h2>
+                    <div class="input-group">
+                        <label for="waste_kg">Waste to landfill (kg/year)</label>
+                        <input type="number" id="waste_kg" name="waste_kg" min="0" placeholder="e.g., 300">
+                    </div>
+                    <div class="input-group">
+                        <label for="recycling_rate_pct">Recycling rate (%)</label>
+                        <input type="number" id="recycling_rate_pct" name="recycling_rate_pct" min="0" max="100" value="0">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="calculate-btn">Calculate My Footprint</button>
+        </form>
+
+        <!-- Live Summary -->
+        <div id="live-summary" class="live-summary hidden">
+            <h3>Estimated Footprint</h3>
+            <div class="summary-content">
+                <div class="total-display">
+                    <span id="total-estimate">0</span>
+                    <small>kg CO₂e/year</small>
+                </div>
+                <div class="per-person">
+                    <span id="per-person-estimate">0</span>
+                    <small>kg CO₂e per person</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

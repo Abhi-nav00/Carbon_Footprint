@@ -1,0 +1,27 @@
+{
+  "United States": {
+    "average_per_person_kgco2e": 16000,
+    "source": "https://ourworldindata.org/co2/country/united-states",
+    "last_updated": "2023-01-01"
+  },
+  "India": {
+    "average_per_person_kgco2e": 1900,
+    "source": "https://ourworldindata.org/co2/country/india",
+    "last_updated": "2023-01-01"
+  },
+  "United Kingdom": {
+    "average_per_person_kgco2e": 5500,
+    "source": "https://ourworldindata.org/co2/country/united-kingdom",
+    "last_updated": "2023-01-01"
+  },
+  "Germany": {
+    "average_per_person_kgco2e": 8500,
+    "source": "https://ourworldindata.org/co2/country/germany",
+    "last_updated": "2023-01-01"
+  },
+  "China": {
+    "average_per_person_kgco2e": 8100,
+    "source": "https://ourworldindata.org/co2/country/china",
+    "last_updated": "2023-01-01"
+  }
+}

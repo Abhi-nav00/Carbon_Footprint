@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Carbon Footprint Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="results-container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Your Carbon Footprint Results</h1>
+                <p>Understanding your environmental impact</p>
+            </div>
+            <img src="{{ url_for('static', filename='images/greenery.png') }}" alt="Greenery" class="greenery-img">
+        </header>
+
+        <div class="results-hero">
+            <div class="total-footprint" id="total-footprint">0</div>
+            <div class="total-unit">kg CO₂e per year</div>
+            <div class="per-person">
+                <span id="per-person-result">0</span> kg CO₂e per person
+            </div>
+            <div id="comparison-message" class="comparison-message"></div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3>Breakdown by Category</h3>
+                <canvas id="breakdown-chart" width="400" height="400"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Comparison to Average</h3>
+                <canvas id="comparison-chart" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="recommendations">
+            <h3>Reduction Steps</h3>
+            <p class="help-text">Sorted by estimated annual CO₂e savings</p>
+            <div id="recommendations-list" class="recommendations-list">
+                <!-- Recommendations will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="ml-section">
+            <h3>Estimate / Comparator</h3>
+            <p id="ml-prediction">Loading...</p>
+            <p id="top-features" class="help-text"></p>
+            <small class="help-text">
+                This estimate is based on machine learning analysis of similar profiles and is provided for comparative purposes only.
+            </small>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <button onclick="window.location.href='/'" class="calculate-btn" style="width: auto; padding: 0.75rem 2rem;">
+                Calculate Again
+            </button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
